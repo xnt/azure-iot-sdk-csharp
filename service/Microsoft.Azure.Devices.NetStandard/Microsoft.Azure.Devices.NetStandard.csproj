@@ -27,15 +27,19 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DocumentationFile>bin\release_delay_sign\Microsoft.Azure.Devices.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;NETSTANDARD1_3</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <OutputPath>bin\Release_Delay_Sign\</OutputPath>
+    <DefineConstants>TRACE;NETSTANDARD1_3;RELEASE_DELAY_SIGN;</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\release_delay_sign\Microsoft.Azure.Devices.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Delay_Sign|AnyCPU'">
     <OutputPath>bin\Release_Delay_Sign\</OutputPath>
@@ -209,7 +213,7 @@
     <Compile Include="..\Microsoft.Azure.Devices\DeviceJobOutcome.cs" />
     <Compile Include="..\Microsoft.Azure.Devices\DeviceJobStatus.cs" />
     <Compile Include="..\Microsoft.Azure.Devices\DeviceJobType.cs" />
-    <Compile Include="..\Microsoft.Azure.Devices\IotHubConnectionStringBuilder.cs"/>
+    <Compile Include="..\Microsoft.Azure.Devices\IotHubConnectionStringBuilder.cs" />
     <Compile Include="..\Microsoft.Azure.Devices\QueryOptions.cs" />
     <Compile Include="..\Microsoft.Azure.Devices\QueryResponse.cs" />
     <Compile Include="..\Microsoft.Azure.Devices\QueryResultType.cs" />
