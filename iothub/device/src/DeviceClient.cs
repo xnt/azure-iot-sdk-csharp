@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft. All rights reserved.
+// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 namespace Microsoft.Azure.Devices.Client
@@ -169,6 +169,7 @@ TODO: revisit DefaultDelegatingHandler - it seems redundant as long as we have t
         /// <summary>
         /// Sets the retry policy used in the operation retries.
         /// </summary>
+        /// <param name="retryPolicy">The retry policy. The default is new ExponentialBackoff(int.MaxValue, TimeSpan.FromMilliseconds(100), TimeSpan.FromSeconds(10), TimeSpan.FromMilliseconds(100));</param>
         // Codes_SRS_DEVICECLIENT_28_001: [This property shall be defaulted to the exponential retry strategy with backoff 
         // parameters for calculating delay in between retries.]
         public void SetRetryPolicy(IRetryPolicy retryPolicy)
@@ -922,7 +923,7 @@ TODO: revisit DefaultDelegatingHandler - it seems redundant as long as we have t
         }
 
         /// <summary>
-        /// Registers a new delgate for the named method. If a delegate is already associated with
+        /// Registers a new delegate for the named method. If a delegate is already associated with
         /// the named method, it will be replaced with the new delegate.
         /// <param name="methodName">The name of the method to associate with the delegate.</param>
         /// <param name="methodHandler">The delegate to be used when a method with the given name is called by the cloud service.</param>
@@ -1005,7 +1006,7 @@ TODO: revisit DefaultDelegatingHandler - it seems redundant as long as we have t
         }
 
         /// <summary>
-        /// Registers a new delgate for the named method. If a delegate is already associated with
+        /// Registers a new delegate for the named method. If a delegate is already associated with
         /// the named method, it will be replaced with the new delegate.
         /// <param name="methodName">The name of the method to associate with the delegate.</param>
         /// <param name="methodHandler">The delegate to be used when a method with the given name is called by the cloud service.</param>
@@ -1069,7 +1070,7 @@ TODO: revisit DefaultDelegatingHandler - it seems redundant as long as we have t
         }
 
         /// <summary>
-        /// The delgate for handling disrupted connection/links in the transport layer.
+        /// The delegate for handling disrupted connection/links in the transport layer.
         /// </summary>
         internal void OnConnectionOpened(object sender, ConnectionEventArgs e)
         {
@@ -1130,7 +1131,7 @@ TODO: revisit DefaultDelegatingHandler - it seems redundant as long as we have t
         }
 
         /// <summary>
-        /// The delgate for handling direct methods received from service.
+        /// The delegate for handling direct methods received from service.
         /// </summary>
         internal async Task OnMethodCalled(MethodRequestInternal methodRequestInternal)
         {
